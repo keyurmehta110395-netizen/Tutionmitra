@@ -1,0 +1,19 @@
+[build]
+  publish = "."
+
+# Hash-based routing is used (#/...), so no SPA rewrite is strictly required.
+# This is kept as a safety net in case you later switch to path-based routing.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "no-cache"
