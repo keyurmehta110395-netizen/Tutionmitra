@@ -7,8 +7,8 @@
    own; every table is locked down by the Row Level Security policies in
    sql/schema.sql, so this key can only do what a policy explicitly allows.
    ============================================================ */
-const SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR-ANON-PUBLIC-KEY';
+const SUPABASE_URL = 'https://imbxnqdluwpitrkfamnj.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_rWJhlNDn4q0s9oZitwUy-w_9UhAHok8';
 
 const SUPABASE_CONFIGURED = !SUPABASE_URL.includes('YOUR-PROJECT-REF') && !SUPABASE_ANON_KEY.includes('YOUR-ANON-PUBLIC-KEY');
 
