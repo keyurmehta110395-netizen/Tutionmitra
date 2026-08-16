@@ -1,5 +1,5 @@
 /* TuitionMitra service worker — cache-first app shell for offline use */
-const CACHE = 'tuitionmitra-v1';
+const CACHE = 'tuitionmitra-v2';
 const ASSETS = [
   './',
   './index.html',
