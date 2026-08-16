@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TuitionMitra — Find &amp; Book the Right Tutor</title>
+<meta name="description" content="Find, compare and book tutors. Search teachers by subject, board, city and budget, chat directly, and manage every class in one place.">
+<meta name="theme-color" content="#16233F">
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <div id="offlineBanner" class="offline-banner">You're offline — TuitionMitra keeps working with data saved on this device.</div>
+
+  <header class="topnav">
+    <div class="wrap">
+      <a href="#/" class="brand"><span class="mark">TM</span> TuitionMitra</a>
+      <nav id="navlinks" class="navlinks"></nav>
+      <div class="flex gap-12">
+        <div id="navuser" class="navuser"></div>
+        <button class="hamburger" data-action="toggle-nav" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="view"></main>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <div>
+        <div class="brand" style="color:#fff;font-size:1.05rem;"><span class="mark">TM</span> TuitionMitra</div>
+        <p style="max-width:280px;">An education marketplace connecting students, teachers, and parents — backed by a shared, secure database.</p>
+      </div>
+      <div>
+        <b style="color:#fff;">Explore</b><br>
+        <a href="#/search">Find teachers</a><br>
+        <a href="#/register">Become a teacher</a><br>
+        <a href="#/how-it-works">How it works</a><br>
+        <a href="#/about">About &amp; version</a>
+      </div>
+      <div>
+        <b style="color:#fff;">Data</b><br>
+        <span style="font-size:.84rem;">Stored in a live shared database — see Admin → Data Center for backup/export.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div id="modalBack" class="modal-back" style="display:none;" data-action="modal-backdrop"></div>
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
