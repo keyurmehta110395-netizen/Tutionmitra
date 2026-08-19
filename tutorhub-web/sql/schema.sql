@@ -138,7 +138,7 @@ set search_path = public
 as $$
 declare
   req_role text;
-  owner_email text := 'owner@example.com'; -- <<< CHANGE THIS to your email
+  owner_email text := 'keyurmehta110395@gmail.com'; -- <<< CHANGE THIS to your email
 begin
   req_role := coalesce(new.raw_user_meta_data->>'role', 'student');
   if lower(new.email) = lower(owner_email) then
