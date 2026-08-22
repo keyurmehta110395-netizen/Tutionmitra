@@ -79,25 +79,58 @@ wherever `index.html` lives) → Deploy.
 
 `netlify.toml` is already included and picked up automatically.
 
-### Option B: Vercel
+### Option B: Vercel via GitHub (recommended — full walkthrough)
 
-**Dashboard (no command line needed):**
-1. Push this folder to a GitHub repo (create one at https://github.com/new
-   if needed).
-2. Go to https://vercel.com → sign in with GitHub → **Add New… → Project**
-   → pick your repo → Vercel auto-detects it as a static site (Framework
-   Preset: "Other") → **Deploy**.
-3. Vercel gives you a live URL immediately (e.g. `your-app.vercel.app`).
+**Step 1 — put the code on GitHub**
+1. Go to https://github.com and sign in (or create a free account)
+2. Click the **+** icon (top right) → **New repository**
+3. Name it e.g. `tuitionmitra`, leave it **Public** or **Private** (either
+   works), don't check any of the initialize options → **Create repository**
+4. On the next page, under "…or push an existing repository from the
+   command line", if you have git installed run from inside the
+   `tutorhub-web` folder:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/tuitionmitra.git
+   git push -u origin main
+   ```
+   No git installed / prefer no command line? On the repo page, click
+   **uploading an existing file**, then drag in every file/folder from
+   `tutorhub-web` (keep the folder structure — `js/`, `css/`, `sql/`, etc.)
+   and commit.
 
-**CLI:**
+**Step 2 — connect Vercel**
+1. Go to https://vercel.com → **Sign Up** (choose **Continue with GitHub**
+   so it's linked automatically) or log in if you already have an account
+2. Click **Add New… → Project**
+3. Find your `tuitionmitra` repo in the list → click **Import**
+4. Vercel auto-detects it as a static site (**Framework Preset: Other**) —
+   leave Build Command and Output Directory blank
+5. Click **Deploy**
+6. After ~30 seconds you get a live URL like `tuitionmitra.vercel.app` —
+   this is publicly live immediately, no extra "make it public" step
+   (unlike Netlify's private-project banner)
+
+**Step 3 — updating the site later**
+Any time you change a file (like `js/config.js`), just push again:
+```bash
+git add .
+git commit -m "Update config"
+git push
+```
+Vercel automatically redeploys within a minute. No re-uploading needed.
+
+**Prefer the command line instead of GitHub?**
 ```bash
 npm install -g vercel
 cd tutorhub-web
 vercel --prod
 ```
 
-`vercel.json` is already included and picked up automatically. No build
-command or output directory setting is needed — it's a static site as-is.
+`vercel.json` is already included and picked up automatically either way.
 
 ### Either way
 
